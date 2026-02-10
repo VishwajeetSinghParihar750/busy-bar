@@ -49,10 +49,10 @@ export default function Hero() {
         playsInline
         src="https://cdn.flipperzero.one/BusyBar_First_Block_Video_Desktop_02.mp4"
       ></video>
-      <div
+      {/* <div
         className="absolute inset-0 bg-linear-to-b 
                   from-black/30 via-black/5 to-black/30 -z-1 pointer-events-none"
-      />
+      /> */}
     </div>
   );
 }

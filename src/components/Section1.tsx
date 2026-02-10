@@ -120,7 +120,7 @@ export default function Section1() {
             </div>
           </div>
           <div className="rounded-2xl  overflow-hidden  border border-gray-400 flex flex-col gap-2 col-span-11">
-            <div className="bg-bg py-4 px-8  flex items-center gap-2 border-b border-gray-400 text-2xl">
+            <div className="bg-bg py-3 px-8  flex items-center gap-2 border-b border-gray-400 text-2xl">
               <span className="">{">_"}</span>
               <span className="font-normal">Developer-friendly</span>
             </div>
