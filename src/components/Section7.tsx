@@ -1,6 +1,6 @@
 export default function Section7() {
   return (
-    <section className="h-dvh relative ">
+    <section className="h-dvh relative overflow-hidden ">
       <video
         autoPlay
         muted

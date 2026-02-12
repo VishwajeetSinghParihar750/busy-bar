@@ -32,3 +32,18 @@
     @apply mx-auto;
   }
 }
+
+@keyframes images-switch {
+  0% {
+    opacity: 0;
+  }
+  74.9% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 100;
+  }
+  99.9% {
+    opacity: 100;
+  }
+}
