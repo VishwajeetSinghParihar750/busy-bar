@@ -11,6 +11,7 @@ import Section9 from "../components/Section9";
 import Section10 from "../components/Section10";
 import Section11 from "../components/Section11";
 import Section12 from "../components/Section12";
+import Section13 from "../components/Section13";
 
 export default function Landing() {
   return (
@@ -28,6 +29,7 @@ export default function Landing() {
       <Section10 />
       <Section11 />
       <Section12 />
+      <Section13 />
     </>
   );
 }
