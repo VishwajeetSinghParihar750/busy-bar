@@ -1,7 +1,7 @@
 export default function Section4() {
   return (
-    <section className="bg-bg py-24  overflow-hidden ">
-      <div className="z-0 relative pb-32">
+    <section className="bg-bg py-24  overflow-hidden panel ">
+      <div className="content z-0 relative pb-32">
         <div className="container  z-0  ">
           <div className="text-center text-7xl font-normal">
             Automatic BUSY status
@@ -58,7 +58,7 @@ export default function Section4() {
             </div>
           </div>
         </div>
-        <div className="mask-[linear-gradient(0deg,transparent,black_40%,black)] -z-1 w-[100vw] absolute right-[-15%] top-[0%] py-24 h-full">
+        <div className="mask-[linear-gradient(0deg,transparent,black_40%,black)] -z-1 w-screen absolute right-[-15%] top-[0%] py-24 h-full">
           <img
             src="https://busy.bar/img/tild6365-3563-4631-a532-353164356565__asao_desktop_2.jpg"
             alt=""

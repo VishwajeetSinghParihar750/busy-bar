@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="bg-fg text-bg py-40 max-md:py-20 ">
-      <div className="container flex gap-8 justify-between max-md:flex-col max-md:justify-start">
+    <footer className="bg-fg text-bg h-[50dvh] panel  flex items-center">
+      <div className="content container flex gap-8 justify-between max-md:flex-col max-md:justify-start">
         <div>
           <img
             src="https://busy.bar/img/tild6135-6162-4462-b465-666261333463__flipper_logo.svg"

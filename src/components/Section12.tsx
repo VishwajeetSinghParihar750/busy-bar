@@ -1,7 +1,7 @@
 export default function Secion12() {
   return (
-    <section className="h-dvh bg-[url(https://busy.bar/img/tild3738-3236-4435-b036-386131396163__busybar_smart_home_w.jpg)] bg-cover bg-center overflow-hidden">
-      <div className="z-0 flex flex-col gap-8 container   my-[10dvh] max-w-2xl">
+    <section className="panel h-dvh bg-[url(https://busy.bar/img/tild3738-3236-4435-b036-386131396163__busybar_smart_home_w.jpg)] bg-cover bg-center overflow-hidden ">
+      <div className="content z-0 flex flex-col gap-8 container   my-[10dvh] max-w-2xl">
         <div className="text-6xl font-normal ">Smart home integration</div>
         <div className="font-normal flex flex-col gap-4 max-w-[59ch] ">
           <div>

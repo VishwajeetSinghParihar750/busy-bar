@@ -1,13 +1,7 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-
 export default function Seciton8() {
-  useGSAP(() => {
-    //
-  });
   return (
-    <section className="py-20">
-      <div className="container ">
+    <section className="panel py-20 bg-bg">
+      <div className="container content ">
         <div className="flex mt-8 ">
           <div className="max-w-3xl flex gap-2 mx-auto">
             <div className="flex flex-col gap-4">

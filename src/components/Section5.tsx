@@ -1,7 +1,7 @@
 function Section5() {
   return (
-    <section className="bg-bg-muted overflow-hidden">
-      <div className="container py-20 ">
+    <section className="bg-bg-muted overflow-hidden panel ">
+      <div className="content container py-20 ">
         <div className="mx-auto max-w-xl font-normal">
           <h1 className="text-6xl font-medium ">Manual Controls</h1>
           <div className="mt-6">

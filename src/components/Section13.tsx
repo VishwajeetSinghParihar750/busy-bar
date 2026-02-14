@@ -1,7 +1,7 @@
 export default function Section13() {
   return (
-    <section className="my-20">
-      <div className="container flex gap-20 flex-col ">
+    <section className="py-20 panel bg-bg">
+      <div className="content container flex gap-20 flex-col ">
         <div className="flex gap-20 ">
           <img
             src="https://busy.bar/img/tild3934-3761-4230-b532-313865383533__pic_matter_logo.svg"

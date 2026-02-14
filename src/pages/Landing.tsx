@@ -14,10 +14,50 @@ import Section12 from "../components/Section12";
 import Section13 from "../components/Section13";
 import Footer from "../components/Footer";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Landing() {
+  useGSAP(() => {
+    let panels = gsap.utils.toArray<HTMLElement>(".panel");
+    let content = gsap.utils.toArray<HTMLElement>(".content");
+
+    panels.forEach((el) => {
+      gsap.to(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "100% 100%",
+          end: "+=100%",
+          scrub: true,
+          pin: true,
+          pinSpacing: false,
+        },
+      });
+    });
+    content.forEach((el, ind) => {
+      if (ind == panels.length - 1) {
+        //footer
+      } else {
+        gsap.to(el, {
+          scale: 0.95,
+          opacity: 0.5,
+          scrollTrigger: {
+            trigger: panels[ind],
+            start: "100% 100%",
+            end: "+=100%",
+            scrub: true,
+          },
+        });
+      }
+    });
+  });
   return (
-    <>
+    <div className="">
       <Hero />
+
       <Section1 />
       <Section2 />
       <Section3 />
@@ -32,6 +72,6 @@ export default function Landing() {
       <Section12 />
       <Section13 />
       <Footer />
-    </>
+    </div>
   );
 }

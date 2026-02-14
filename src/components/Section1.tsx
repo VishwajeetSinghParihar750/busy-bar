@@ -1,7 +1,7 @@
 export default function Section1() {
   return (
-    <div className="bg-bg-muted">
-      <section className=" container py-20">
+    <div className="bg-bg-muted panel">
+      <section className="content container py-20">
         <div className="mx-auto grid grid-cols-4 max-xl:grid-cols-2 gap-6 text-fg-muted  container">
           <div className="flex gap-4 items-start">
             <img
