@@ -8,7 +8,7 @@ export default function Sectin10() {
           muted
           loop
           playsInline
-          className=" absolute -right-1/4 h-full w-full object-cover -z-1"
+          className=" absolute -right-1/4 h-full w-full object-cover -z-1 scale-111"
         ></video>
         <div className="container max-w-lg mx-0 py-[20dvh] pl-[5vw]">
           <div className="flex flex-col z-0 gap-8">

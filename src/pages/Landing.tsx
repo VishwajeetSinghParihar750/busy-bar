@@ -22,38 +22,45 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Landing() {
   useGSAP(() => {
-    let panels = gsap.utils.toArray<HTMLElement>(".panel");
-    let content = gsap.utils.toArray<HTMLElement>(".content");
+    const panels = gsap.utils.toArray<HTMLElement>(".panel");
+    const contents = gsap.utils.toArray<HTMLElement>(".content");
 
-    panels.forEach((el) => {
-      gsap.to(el, {
-        scrollTrigger: {
-          trigger: el,
-          start: "100% 100%",
-          end: "+=100%",
-          scrub: true,
-          pin: true,
-          pinSpacing: false,
-        },
-      });
-    });
-    content.forEach((el, ind) => {
-      if (ind == panels.length - 1) {
-        //footer
-      } else {
-        gsap.to(el, {
-          scale: 0.95,
-          opacity: 0.5,
+    panels.forEach((panel, i) => {
+      const el = contents[i];
+      if (!el) return;
+
+      gsap.fromTo(
+        el,
+        { scale: 0.9, opacity: 0.9 },
+        {
+          scale: 1,
+          opacity: 1,
           scrollTrigger: {
-            trigger: panels[ind],
-            start: "100% 100%",
-            end: "+=100%",
+            trigger: panel,
+            start: "top bottom",
+            end: "top top",
             scrub: true,
           },
-        });
-      }
+        },
+      );
+
+      gsap.fromTo(
+        el,
+        { scale: 1, opacity: 1 },
+        {
+          scale: 0.9,
+          opacity: 0.9,
+          scrollTrigger: {
+            trigger: panel,
+            start: "bottom bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        },
+      );
     });
   });
+
   return (
     <div className="">
       <Hero />

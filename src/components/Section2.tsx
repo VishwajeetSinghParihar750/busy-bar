@@ -8,7 +8,7 @@ export default function Section2() {
           loop
           playsInline
           muted
-          className="absolute w-[45%] right-0 top-0 pointer-events-none -z-1 "
+          className="absolute w-[45%] right-0 top-0 pointer-events-none  scale-111 -z-1 "
         ></video>
 
         <div className="font-normal max-w-xl space-y-8 ">

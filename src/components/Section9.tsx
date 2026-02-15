@@ -1,6 +1,6 @@
 export default function Section9() {
   return (
-    <section className="panel h-dvh relative bg-bg">
+    <section className="panel h-dvh relative bg-[linear-gradient(to_right,#fdfaff,#eeebf2)]">
       <div className="content h-full w-full overflow-hidden relative">
         <video
           src="https://cdn.flipperzero.one/busy_bar_bg_vid_desktop_2560_02.mp4"
@@ -8,7 +8,7 @@ export default function Section9() {
           autoPlay
           playsInline
           muted
-          className="absolute inset-0 -z-1 object-cover w-full h-full object-center"
+          className="absolute inset-0 -z-1 object-cover w-full h-full object-center scale-111"
         ></video>
         <div className="max-w-120 flex flex-col gap-4 top-1/6 absolute left-1/2 -translate-x-1/16 z-0 container">
           <div className="text-6xl font-medium">Block distractions</div>

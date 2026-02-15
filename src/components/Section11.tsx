@@ -8,7 +8,7 @@ export default function Sectin10() {
           loop
           muted
           playsInline
-          className="absolute inset-0 object-cover object-[50%_30%] h-full w-full -z-1"
+          className="absolute inset-0 object-cover object-[50%_30%] h-full w-full -z-1 "
         ></video>
         <div className="z-0 flex flex-col gap-8 container mx-0 max-w-lg  my-[10dvh] ml-[10vw]">
           <div className="text-6xl font-medium">Mute all devices</div>

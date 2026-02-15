@@ -8,9 +8,9 @@ export default function Section7() {
           playsInline
           loop
           src="https://cdn.flipperzero.one/busybar_interval_busy_desktop_008.mp4"
-          className="object-cover"
+          className="object-cover absolute inset-0 w-full h-full object-[50%_60%] scale-111"
         ></video>
-        <div className="max-w-2xl flex flex-col gap-4 top-1/4 absolute left-1/2 -translate-x-1/2">
+        <div className="max-w-2xl flex flex-col gap-4 top-1/5 absolute left-1/2 -translate-x-1/2">
           <div className="text-6xl ">Interval focus timer</div>
 
           <div className="font-normal ">

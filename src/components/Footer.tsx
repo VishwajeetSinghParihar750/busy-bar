@@ -1,6 +1,29 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Footer() {
+  let footer_ref = useRef<HTMLElement | null>(null);
+  useGSAP(() => {
+    gsap.from(footer_ref.current, {
+      backgroundColor: "white",
+      scrollTrigger: {
+        trigger: footer_ref.current,
+        start: "0% 100%",
+        end: "100% 100%",
+        scrub: true,
+      },
+    });
+  });
+
   return (
-    <footer className="bg-fg text-bg h-[50dvh] panel  flex items-center">
+    <footer
+      className="bg-fg text-bg h-[50dvh] panel  flex items-center"
+      ref={footer_ref}
+    >
       <div className="content container flex gap-8 justify-between max-md:flex-col max-md:justify-start">
         <div>
           <img
