@@ -18,6 +18,31 @@ export default function App() {
     requestAnimationFrame(raf);
 
     lenis.on("scroll", ScrollTrigger.update);
+
+    return () => lenis.destroy();
+    //
+  }, []);
+
+  useEffect(() => {
+    let videos = document.querySelectorAll("video");
+
+    let observers: IntersectionObserver[] = [];
+
+    videos.forEach((vid) => {
+      let obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) vid.play();
+          else vid.pause();
+        },
+        { threshold: 0.1 },
+      );
+      obs.observe(vid);
+      observers.push(obs);
+    });
+
+    return () => {
+      observers.forEach((obs) => obs.disconnect());
+    };
   }, []);
   return (
     <body className="bg-bg text-fg text-xl font-medium">
