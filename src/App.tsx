@@ -34,7 +34,7 @@ export default function App() {
           if (entry.isIntersecting) vid.play();
           else vid.pause();
         },
-        { threshold: 0.1 },
+        { threshold: 0.2 },
       );
       obs.observe(vid);
       observers.push(obs);
