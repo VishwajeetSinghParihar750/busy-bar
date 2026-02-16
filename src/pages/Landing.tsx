@@ -17,52 +17,63 @@ import Footer from "../components/Footer";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Landing() {
-  useGSAP(() => {
-    const panels = gsap.utils.toArray<HTMLElement>(".panel");
-    const contents = gsap.utils.toArray<HTMLElement>(".content");
+  let landing = useRef<HTMLDivElement | null>(null);
 
-    panels.forEach((panel, i) => {
-      const el = contents[i];
-      if (!el) return;
+  useGSAP(
+    () => {
+      if (!landing.current) return;
 
-      gsap.fromTo(
-        el,
-        { scale: 0.9, opacity: 0.9 },
-        {
-          scale: 1,
-          opacity: 1,
-          scrollTrigger: {
-            trigger: panel,
-            start: "top bottom",
-            end: "top top",
-            scrub: true,
-          },
-        },
+      const panels = gsap.utils.toArray<HTMLElement>(".panel", landing.current);
+      const contents = gsap.utils.toArray<HTMLElement>(
+        ".content",
+        landing.current,
       );
 
-      gsap.fromTo(
-        el,
-        { scale: 1, opacity: 1 },
-        {
-          scale: 0.9,
-          opacity: 0.9,
-          scrollTrigger: {
-            trigger: panel,
-            start: "bottom bottom",
-            end: "bottom top",
-            scrub: true,
+      panels.forEach((panel, i) => {
+        const el = contents[i];
+        if (!el) return;
+
+        gsap.fromTo(
+          el,
+          { scale: 0.9, opacity: 0.9 },
+          {
+            scale: 1,
+            opacity: 1,
+            scrollTrigger: {
+              trigger: panel,
+              start: "top bottom",
+              end: "top top",
+              scrub: true,
+            },
           },
-        },
-      );
-    });
-  });
+        );
+
+        gsap.fromTo(
+          el,
+          { scale: 1, opacity: 1 },
+          {
+            scale: 0.9,
+            opacity: 0.9,
+            scrollTrigger: {
+              trigger: panel,
+              start: "bottom bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          },
+        );
+      });
+    },
+    { scope: landing },
+  );
 
   return (
-    <div className="">
+    <div className="" ref={landing}>
       <Hero />
 
       <Section1 />

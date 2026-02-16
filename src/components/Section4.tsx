@@ -1,18 +1,22 @@
+import BlockReveal from "./gsap/BlockReveal";
+
 export default function Section4() {
   return (
-    <section className="bg-bg py-24  overflow-hidden panel ">
-      <div className=" content ">
-        <div className=" z-0 relative pb-32">
-          <div className="container  z-0  ">
+    <section className="bg-bg py-24 overflow-hidden panel">
+      <div className="content">
+        <div className="z-0 relative pb-32">
+          <div className="container z-0">
             <div className="text-center text-7xl font-normal">
-              Automatic BUSY status
+              <BlockReveal>Automatic BUSY status</BlockReveal>
             </div>
-            <div className="w-2/5 flex z-0 flex-col gap-12  relative py-24  overflow-x-visible ">
+            <div className="w-2/5 flex z-0 flex-col gap-12 relative py-24 overflow-x-visible">
               <div className="font-normal">
-                BUSY Bar integrates with{" "}
-                <span className="text-brand border-b">desktop software</span>{" "}
-                and automatically activates when you’re on a call, live on
-                stream, recording audio, or when a certain program is active.
+                <BlockReveal>
+                  BUSY Bar integrates with{" "}
+                  <span className="text-brand border-b">desktop software</span>{" "}
+                  and automatically activates when you're on a call, live on
+                  stream, recording audio, or when a certain program is active.
+                </BlockReveal>
               </div>
               <div className="flex flex-col gap-8">
                 <div className="flex items-center">
@@ -22,10 +26,14 @@ export default function Section4() {
                     className="max-w-12 mr-4"
                   />
                   <div className="flex flex-col max-w-[45ch]">
-                    <div className="font-normal">Automatic ON CALL status</div>
+                    <div className="font-normal">
+                      <BlockReveal>Automatic ON CALL status</BlockReveal>
+                    </div>
                     <div className="text-base text-fg-muted mt-1">
-                      When the microphone is activated on your computer, BUSY
-                      Bar will automatically display an ON CALL status.
+                      <BlockReveal>
+                        When the microphone is activated on your computer, BUSY
+                        Bar will automatically display an ON CALL status.
+                      </BlockReveal>
                     </div>
                   </div>
                 </div>
@@ -36,11 +44,15 @@ export default function Section4() {
                     className="max-w-12 mr-4"
                   />
                   <div className="flex flex-col max-w-[45ch]">
-                    <div className="font-normal ">Streaming mode</div>
+                    <div className="font-normal">
+                      <BlockReveal>Streaming mode</BlockReveal>
+                    </div>
                     <div className="text-base text-fg-muted mt-1">
-                      When you’re streaming through any software like OBS (Open
-                      Broadcaster Software), BUSY Bar will automatically turn
-                      on.
+                      <BlockReveal>
+                        When you're streaming through any software like OBS
+                        (Open Broadcaster Software), BUSY Bar will automatically
+                        turn on.
+                      </BlockReveal>
                     </div>
                   </div>
                 </div>
@@ -51,9 +63,13 @@ export default function Section4() {
                     className="max-w-12 mr-4"
                   />
                   <div className="flex flex-col max-w-[45ch]">
-                    <div className="font-normal">Multi-platform support</div>
+                    <div className="font-normal">
+                      <BlockReveal>Multi-platform support</BlockReveal>
+                    </div>
                     <div className="text-base text-fg-muted mt-1">
-                      Supports Windows, macOS, and Linux (coming soon).
+                      <BlockReveal>
+                        Supports Windows, macOS, and Linux (coming soon).
+                      </BlockReveal>
                     </div>
                   </div>
                 </div>
@@ -64,17 +80,21 @@ export default function Section4() {
             <img
               src="https://busy.bar/img/tild6365-3563-4631-a532-353164356565__asao_desktop_2.jpg"
               alt=""
-              className=" object-fill"
+              className="object-fill"
             />
           </div>
         </div>
         <div className="bg-bg-muted rounded-4xl container mt-20 h-200 font-normal overflow-hidden relative z-0">
-          <div className="p-16 pb-0 ">
-            <div className="text-5xl">Remote control over Wi-Fi</div>
+          <div className="p-16 pb-0">
+            <div className="text-5xl">
+              <BlockReveal>Remote control over Wi-Fi</BlockReveal>
+            </div>
             <div className="mt-4 max-w-[50ch]">
-              Control BUSY Bar remotely over the internet. Place it on the wall
-              or door and use the desktop app to automatically activate the BUSY
-              status when you’re on calls.
+              <BlockReveal>
+                Control BUSY Bar remotely over the internet. Place it on the
+                wall or door and use the desktop app to automatically activate
+                the BUSY status when you're on calls.
+              </BlockReveal>
             </div>
           </div>
 

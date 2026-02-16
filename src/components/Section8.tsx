@@ -1,16 +1,23 @@
-export default function Seciton8() {
+import BlockReveal from "./gsap/BlockReveal";
+
+export default function Section8() {
   return (
     <section className="panel py-20 bg-bg">
       <div className="container content ">
         <div className="flex mt-8 ">
           <div className="max-w-3xl flex gap-2 mx-auto">
             <div className="flex flex-col gap-4">
-              <div className="text-6xl ">New Pomodoro timer</div>
+              <div className="text-6xl">
+                <BlockReveal>New Pomodoro timer</BlockReveal>
+              </div>
 
-              <div className="font-normal ">
-                We’ve redesigned the classic Pomodoro timer by combining it with
-                a distraction blocker to help you stay focused and fight off
-                notifications, social media, and other brain rot while you work.
+              <div className="font-normal">
+                <BlockReveal>
+                  We've redesigned the classic Pomodoro timer by combining it
+                  with a distraction blocker to help you stay focused and fight
+                  off notifications, social media, and other brain rot while you
+                  work.
+                </BlockReveal>
               </div>
             </div>
             <img
@@ -43,8 +50,11 @@ export default function Seciton8() {
           />
         </div>
         <div className="max-w-2xl mt-16 mx-auto">
-          <div className="text-4xl">We fight major focus killers</div>
-          <div className="flex gap-20 mt-12">
+          <div className="text-4xl">
+            <BlockReveal>We fight major focus killers</BlockReveal>
+          </div>
+          <div className="grid grid-cols-2 gap-20 mt-12">
+            {/* <div className="flex gap-20 mt-12"> */}
             <div className="flex flex-col gap-4">
               <img
                 src="https://busy.bar/img/tild3335-6139-4331-b563-646535353466__ill1.jpg"
@@ -53,11 +63,15 @@ export default function Seciton8() {
               />
 
               <div className="flex gap-2 flex-col">
-                <div className="text-2xl font-normal">Endless scrolling</div>
+                <div className="text-2xl font-normal">
+                  <BlockReveal>Endless scrolling</BlockReveal>
+                </div>
                 <div className="text-fg-muted text-sm">
-                  Brain-rotting content kills your focus. We block Instagram and
-                  TikTok while you’re in focus mode — so you can’t even open
-                  them.
+                  <BlockReveal>
+                    Brain-rotting content kills your focus. We block Instagram
+                    and TikTok while you're in focus mode — so you can't even
+                    open them.
+                  </BlockReveal>
                 </div>
               </div>
             </div>
@@ -69,11 +83,15 @@ export default function Seciton8() {
               />
 
               <div className="flex gap-2 flex-col">
-                <div className="text-2xl font-normal">People around</div>
+                <div className="text-2xl font-normal">
+                  <BlockReveal>People around</BlockReveal>
+                </div>
                 <div className="text-fg-muted text-sm">
-                  Just as you manage to concentrate, someone always tries to
-                  interrupt. BUSY Bar lets others know when you’re in deep focus
-                  — and when you’ll be available again.
+                  <BlockReveal>
+                    Just as you manage to concentrate, someone always tries to
+                    interrupt. BUSY Bar lets others know when you're in deep
+                    focus — and when you'll be available again.
+                  </BlockReveal>
                 </div>
               </div>
             </div>

@@ -1,6 +1,8 @@
+import BlockReveal from "./gsap/BlockReveal";
+
 export default function Section2() {
   return (
-    <section className="relative overflow-hidden h-dvh  panel bg-bg">
+    <section className="relative overflow-hidden h-dvh panel bg-bg">
       <div className="content w-full h-full p-20">
         <video
           src="https://cdn.flipperzero.one/lekyb_desktop_004.mp4"
@@ -8,15 +10,19 @@ export default function Section2() {
           loop
           playsInline
           muted
-          className="absolute w-[45%] right-0 top-0 pointer-events-none  scale-111 -z-1 "
+          className="absolute w-[45%] right-0 top-0 pointer-events-none scale-111 -z-1"
         ></video>
 
-        <div className="font-normal max-w-xl space-y-8 ">
+        <div className="font-normal max-w-xl space-y-8">
           <div>
-            <h1 className="text-6xl font-medium">Show you're BUSY</h1>
-            <div className=" max-w-[50ch] mt-6">
-              Stop others from interrupting your deep focus. The display shows
-              you’re busy and when you’ll be free again.
+            <h1 className="text-6xl font-medium">
+              <BlockReveal>Show you're BUSY</BlockReveal>
+            </h1>
+            <div className="max-w-[50ch] mt-6">
+              <BlockReveal>
+                Stop others from interrupting your deep focus. The display shows
+                you're busy and when you'll be free again.
+              </BlockReveal>
             </div>
           </div>
 
@@ -28,10 +34,14 @@ export default function Section2() {
                 className="max-w-32 mr-4"
               />
               <div>
-                <div>Instant activation</div>
+                <div>
+                  <BlockReveal>Instant activation</BlockReveal>
+                </div>
                 <div className="text-fg-muted text-base mt-2">
-                  Start and stop the BUSY status manually with a large button.
-                  Works comple﻿tely offline, with no extra software required.
+                  <BlockReveal>
+                    Start and stop the BUSY status manually with a large button.
+                    Works completely offline, with no extra software required.
+                  </BlockReveal>
                 </div>
               </div>
             </div>
@@ -44,10 +54,14 @@ export default function Section2() {
                 className="max-w-32 mr-4"
               />
               <div>
-                <div>Instant activation</div>
+                <div>
+                  <BlockReveal>Set timer</BlockReveal>
+                </div>
                 <div className="text-fg-muted text-base mt-2">
-                  Start and stop the BUSY status manually with a large button.
-                  Works comple﻿tely offline, with no extra software required.
+                  <BlockReveal>
+                    Set a timer for how long you want to be in BUSY mode. The
+                    display will automatically turn off when the timer ends.
+                  </BlockReveal>
                 </div>
               </div>
             </div>

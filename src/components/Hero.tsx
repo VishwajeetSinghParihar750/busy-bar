@@ -3,13 +3,12 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { useRef } from "react";
+import BlockReveal from "./gsap/BlockReveal";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function Hero() {
-  let hero_text = useRef<HTMLDivElement | null>(null);
   let hero_div = useRef<HTMLDivElement | null>(null);
-  let hero_video = useRef<HTMLVideoElement | null>(null);
 
   let order_button = useRef<HTMLDivElement | null>(null);
   let order_button2 = useRef<HTMLDivElement | null>(null);
@@ -17,20 +16,10 @@ export default function Hero() {
   let tl1_ref = useRef<gsap.core.Timeline | null>(null);
 
   useGSAP(
-    () => {
+    async () => {
       //
-      //
-      let split_word = new SplitText(hero_text.current, { type: "words" });
-
-      gsap.from(split_word.words, {
-        opacity: 0.2,
-        stagger: 0.08,
-        onComplete: () => {
-          hero_video.current?.play();
-        },
-      });
-
-      //
+      if (!order_button.current || !order_button2.current) return;
+      await document.fonts.ready;
       //
       let tl1 = gsap.timeline({ paused: true });
       tl1_ref.current = tl1;
@@ -64,7 +53,6 @@ export default function Hero() {
         );
 
       return () => {
-        split_word.revert();
         button_split_word.revert();
         button_split_word2.revert();
       };
@@ -79,10 +67,10 @@ export default function Hero() {
     >
       <div className="content h-full w-full ">
         <video
-          ref={hero_video}
           className="absolute inset-0 h-full w-full object-cover object-[50%_30%] -z-1 scale-111"
           loop
           muted
+          autoPlay
           playsInline
           src="https://cdn.flipperzero.one/BusyBar_First_Block_Video_Desktop_02.mp4"
         ></video>
@@ -109,17 +97,15 @@ export default function Hero() {
             </div>
           </nav>
           <section className="absolute top-[25dvh] left-1/2 -translate-x-1/2 w-full z-0 ">
-            <div className="mt-[30vh]  text-2xl " ref={hero_text}>
+            <div className="mt-[30vh]  text-2xl overflow-hidden ">
               <p className="mx-auto w-fit">
-                <span className="font-bold">BUSY Bar </span> is a productivity
-                multi-tool device with an LED pixel display.
-              </p>
-              <p className="mx-auto w-fit">
-                Focus timer with distraction blocking feature on your phone and
-                PC.
-              </p>
-              <p className="mx-auto w-fit">
-                Fully customizable, open-source, and smart home ready.
+                <BlockReveal>
+                  <span className="font-bold">BUSY Bar </span> is a productivity
+                  multi-tool device with an LED pixel display. <br />
+                  Focus timer with distraction blocking feature on your phone
+                  and PC. <br />
+                  Fully customizable, open-source, and smart home ready.
+                </BlockReveal>
               </p>
             </div>
             <button

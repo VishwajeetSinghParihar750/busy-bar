@@ -2,26 +2,32 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import BlockReveal from "./gsap/BlockReveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
   let footer_ref = useRef<HTMLElement | null>(null);
-  useGSAP(() => {
-    gsap.from(footer_ref.current, {
-      backgroundColor: "white",
-      scrollTrigger: {
-        trigger: footer_ref.current,
-        start: "0% 100%",
-        end: "100% 100%",
-        scrub: true,
-      },
-    });
-  });
+  useGSAP(
+    () => {
+      if (!footer_ref.current) return;
+
+      gsap.from(footer_ref.current, {
+        backgroundColor: "white",
+        scrollTrigger: {
+          trigger: footer_ref.current,
+          start: "0% 100%",
+          end: "100% 100%",
+          scrub: true,
+        },
+      });
+    },
+    { scope: footer_ref },
+  );
 
   return (
     <footer
-      className="bg-fg text-bg h-[50dvh] panel  flex items-center"
+      className="bg-fg text-bg h-[50dvh] panel flex items-center"
       ref={footer_ref}
     >
       <div className="content container flex gap-8 justify-between max-md:flex-col max-md:justify-start">
@@ -32,17 +38,33 @@ export default function Footer() {
             className="w-72"
           />
           <div className="text-xs opacity-50 mt-4">
-            <div>Designed by Flipper FZCO. </div>{" "}
-            <div>© 2025. All rights reserved.</div>
+            <BlockReveal>
+              <div>Designed by Flipper FZCO.</div>
+            </BlockReveal>
+            <BlockReveal>
+              <div>© 2025. All rights reserved.</div>
+            </BlockReveal>
           </div>
         </div>
-        <div className="grid grid-cols-3 max-xl:grid-cols-2 max-lg:gap-x-4  font-normal gap-x-12   gap-y-0 ">
-          <a href="">Shop</a>
-          <a href="">About Us</a>
-          <a href="">Blog</a>
-          <a href="">Downloads</a>
-          <a href="">Contacts</a>
-          <a href="">Privacy Policy</a>
+        <div className="grid grid-cols-3 max-xl:grid-cols-2 max-lg:gap-x-4 font-normal gap-x-12 gap-y-0">
+          <BlockReveal>
+            <a href="">Shop</a>
+          </BlockReveal>
+          <BlockReveal>
+            <a href="">About Us</a>
+          </BlockReveal>
+          <BlockReveal>
+            <a href="">Blog</a>
+          </BlockReveal>
+          <BlockReveal>
+            <a href="">Downloads</a>
+          </BlockReveal>
+          <BlockReveal>
+            <a href="">Contacts</a>
+          </BlockReveal>
+          <BlockReveal>
+            <a href="">Privacy Policy</a>
+          </BlockReveal>
         </div>
 
         <div>
@@ -77,8 +99,12 @@ export default function Footer() {
             </a>
           </div>
           <div className="text-xs opacity-50 mt-4">
-            <div>Dubai Silicon Oasis, Dubai,</div>{" "}
-            <div>United Arab Emirates</div>
+            <BlockReveal>
+              <div>Dubai Silicon Oasis, Dubai,</div>
+            </BlockReveal>
+            <BlockReveal>
+              <div>United Arab Emirates</div>
+            </BlockReveal>
           </div>
         </div>
       </div>

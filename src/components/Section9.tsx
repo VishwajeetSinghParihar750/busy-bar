@@ -1,3 +1,5 @@
+import BlockReveal from "./gsap/BlockReveal";
+
 export default function Section9() {
   return (
     <section className="panel h-dvh relative bg-[linear-gradient(to_right,#fdfaff,#eeebf2)]">
@@ -11,17 +13,23 @@ export default function Section9() {
           className="absolute inset-0 -z-1 object-cover w-full h-full object-center scale-111"
         ></video>
         <div className="max-w-120 flex flex-col gap-4 top-1/6 absolute left-1/2 -translate-x-1/16 z-0 container">
-          <div className="text-6xl font-medium">Block distractions</div>
+          <div className="text-6xl font-medium">
+            <BlockReveal>Block distractions</BlockReveal>
+          </div>
 
-          <div className="font-normal ">
-            BUSY Bar can automatically mute notifications on your phone and PC
-            when BUSY mode is activated. It helps you stay focused by blocking
-            distractions as you work.
+          <div className="font-normal">
+            <BlockReveal>
+              BUSY Bar can automatically mute notifications on your phone and PC
+              when BUSY mode is activated. It helps you stay focused by blocking
+              distractions as you work.
+            </BlockReveal>
           </div>
 
           <div className="mt-4 flex flex-col gap-4">
             <div className="text-sm text-fg-muted">
-              Requires BUSY App integration (available for free):
+              <BlockReveal>
+                Requires BUSY App integration (available for free):
+              </BlockReveal>
             </div>
             <div className="flex gap-4">
               <a href="">

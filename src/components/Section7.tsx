@@ -1,3 +1,5 @@
+import BlockReveal from "./gsap/BlockReveal";
+
 export default function Section7() {
   return (
     <section className="panel h-dvh relative overflow-hidden bg-bg">
@@ -11,12 +13,16 @@ export default function Section7() {
           className="object-cover absolute inset-0 w-full h-full object-[50%_60%] scale-111"
         ></video>
         <div className="max-w-2xl flex flex-col gap-4 top-1/5 absolute left-1/2 -translate-x-1/2">
-          <div className="text-6xl ">Interval focus timer</div>
+          <div className="text-6xl">
+            <BlockReveal>Interval focus timer</BlockReveal>
+          </div>
 
-          <div className="font-normal ">
-            BUSY Bar is an advanced productivity timer inspired by the Pomodoro
-            technique, which divides work into short intervals — 25-minute work
-            sessions followed by 5-minute breaks.
+          <div className="font-normal">
+            <BlockReveal>
+              BUSY Bar is an advanced productivity timer inspired by the
+              Pomodoro technique, which divides work into short intervals —
+              25-minute work sessions followed by 5-minute breaks.
+            </BlockReveal>
           </div>
         </div>
       </div>
