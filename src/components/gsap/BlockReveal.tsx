@@ -48,8 +48,7 @@ export default function BlockReveal({
         line.classList.add("relative");
         line.classList.add("z-0");
 
-        block.className =
-          " will-change-transform absolute inset-0 top-[1px]  bg-brand z-1";
+        block.className = " absolute inset-0 top-[1px]  bg-brand z-1";
 
         wrapper.appendChild(block);
 

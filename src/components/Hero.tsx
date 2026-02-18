@@ -1,64 +1,12 @@
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
 import { useRef } from "react";
 import BlockReveal from "./gsap/BlockReveal";
-
-gsap.registerPlugin(ScrollTrigger, SplitText);
+import TextEffect1 from "./gsap/TextEffect1";
+import type { TextEffect1Handle } from "./gsap/TextEffect1";
 
 export default function Hero() {
   let hero_div = useRef<HTMLDivElement | null>(null);
 
-  let order_button = useRef<HTMLDivElement | null>(null);
-  let order_button2 = useRef<HTMLDivElement | null>(null);
-
-  let tl1_ref = useRef<gsap.core.Timeline | null>(null);
-
-  useGSAP(
-    async () => {
-      //
-      if (!order_button.current || !order_button2.current) return;
-      await document.fonts.ready;
-      //
-      let tl1 = gsap.timeline({ paused: true });
-      tl1_ref.current = tl1;
-
-      let button_split_word = new SplitText(order_button.current, {
-        type: "chars",
-      });
-      let button_split_word2 = new SplitText(order_button2.current, {
-        type: "chars",
-      });
-
-      tl1
-        .to(
-          button_split_word.chars,
-          {
-            yPercent: -100,
-            stagger: 0.01,
-            ease: "power4.inOut",
-          },
-          0,
-        )
-        .to(
-          button_split_word2.chars,
-          {
-            //
-            yPercent: -100,
-            stagger: 0.01,
-            ease: "power4.inOut",
-          },
-          0,
-        );
-
-      return () => {
-        button_split_word.revert();
-        button_split_word2.revert();
-      };
-    },
-    { scope: hero_div },
-  );
+  let text_effect_handle_ref = useRef<TextEffect1Handle>(null);
 
   return (
     <div
@@ -110,20 +58,17 @@ export default function Hero() {
             </div>
             <button
               onMouseEnter={(e) => {
-                tl1_ref.current?.play();
+                text_effect_handle_ref?.current?.play();
               }}
               onMouseLeave={() => {
-                tl1_ref.current?.reverse();
+                text_effect_handle_ref.current?.reverse();
               }}
               className="bg-brand block relative overflow-hidden  text-bg font-medium hover:bg-fg cursor-pointer rounded-lg mx-auto mt-12  text-xl py-5 px-12  "
             >
-              <div className="overflow-hidden h-6 w-40 relative flex justify-center font-bold">
-                <div ref={order_button} className="absolute inset-0">
+              <div className="overflow-hidden  relative flex justify-center font-bold">
+                <TextEffect1 ref={text_effect_handle_ref}>
                   PRE-ORDER
-                </div>
-                <div ref={order_button2} className="absolute top-full">
-                  PRE-ORDER
-                </div>
+                </TextEffect1>
               </div>
             </button>
           </section>
